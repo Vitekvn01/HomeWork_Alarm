@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Criminal : MonoBehaviour
 {
+    private const string SpeedVariable = "Speed";
+    
     [SerializeField] private float _speed;
 
     private Animator _animator;
@@ -21,7 +23,7 @@ public class Criminal : MonoBehaviour
 
     private void Update()
     {
-        _animator.SetFloat("Speed", _speed);
+        _animator.SetFloat(SpeedVariable, _speed);
         transform.position += transform.forward * (_speed * Time.deltaTime);
     }
 }
